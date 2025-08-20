@@ -1,13 +1,9 @@
 'use client'
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "./componets/header/page";
-import HeaderScreen from "./componets/header/page";
+import Header from "./componets/header/Header";
 import styled, { createGlobalStyle } from "styled-components";
-import FooterComponent from "./componets/footer/page";
-
-
-
+import Footer from "./componets/footer/Footer";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -16,9 +12,11 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    justify-content: space-between;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 `;
-
 
 export default function RootLayout({
   children,
@@ -29,9 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GlobalStyle/>
-        <HeaderScreen/>
+        <Header/>
         {children}
-        <FooterComponent/>
+        <Footer/>
       </body>
     </html>
   );
