@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { GlobalStyle } from "styles/GlobalStyles";
 import Header from "./componets/header/Header";
 import Footer from "./componets/footer/Footer";

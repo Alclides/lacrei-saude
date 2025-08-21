@@ -43,18 +43,21 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
                     placeholder="Digite seu Nome!"
                     onChange={(e) => setName(e.target.value)}
                     value={name}
+                    required
                 />
                 <Input
                     type="email"
                     placeholder="Digite seu Email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
+                    required
                 />
                 <Input
                     type="text"
                     placeholder="Vaga desejada: ex: FrontEnd"
                     onChange={(e) => setVaga(e.target.value)}
                     value={vaga}
+                    required
                 />
                 <Button type="submit">Enviar</Button>
             </Formulario>

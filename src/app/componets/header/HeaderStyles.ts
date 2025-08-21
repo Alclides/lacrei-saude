@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Logo = styled.img`
+export const Logolacrei = styled.img`
   width: 100%;
   max-width: 200px;
   height: auto;
