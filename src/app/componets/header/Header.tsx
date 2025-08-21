@@ -1,5 +1,4 @@
 'use client';
-import styled from "styled-components";
 import {Button} from "../Button/Button";
 import { HeaderContainer, Logo } from "./HeaderStyles";
 

@@ -1,4 +1,4 @@
-
+'use client'
 import { FooterContainer } from "./FooterStyled";
 
 

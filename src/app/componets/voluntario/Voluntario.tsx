@@ -1,3 +1,4 @@
+'use client'
 import { Banner, Container, Formulario, Imagem, Input, Linha, Sucesso, TextBanner, Titulo, TituloBox, } from './VoluntarioStyles'
 import { useState } from "react";
 import { Button } from "../Button/Button";
