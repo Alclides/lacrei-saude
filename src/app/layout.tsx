@@ -15,7 +15,7 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <link rel="icon" href="/favicon.ico" />
-                <title>Meu Projeto</title>
+                <title>Voluntariado</title>
             </head>
             <body>
                 <GlobalStyle />
