@@ -1,8 +1,8 @@
 
 'use client';
-import styled from "styled-components";
+ import styled from "styled-components";
 
-const Button = styled.button`
+export const Button = styled.button`
   padding: 8px;
   height: 40px;
   width: auto;
@@ -23,4 +23,4 @@ const Button = styled.button`
 
 `;
 
-export default Button;
+

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import styled from "styled-components";
-import Button from "../Button/Button";
+import {Button} from "../Button/Button";
 
 const Container = styled.div`
     display: flex;
@@ -48,11 +48,22 @@ const TextBanner = styled.p`
     margin-right: 10px;
     text-align: center;
     font-family: sans-serif;
+
+    @media (max-width: 400px) {
+        font-size: 18px;
+        margin-right: 5px;
+    }
 `;
 
 const Imagem = styled.img`
     height: 400px;
     width: auto;
+
+    @media (max-width: 400px) {
+        height: 250px;
+        max-width: 100%;
+    }
+
 `;
 
 const Input = styled.input`

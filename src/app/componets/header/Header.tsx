@@ -1,6 +1,6 @@
 'use client';
 import styled from "styled-components";
-import Button from "../Button/Button";
+import {Button} from "../Button/Button";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -12,6 +12,7 @@ const HeaderContainer = styled.header`
   @media (max-width: 400px) {
      gap: 10px;
      justify-content: center;
+      padding: 10px;
   }
 `;
 
@@ -33,7 +34,7 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Logo src="/logo_lacrei_desktop.7ae004ab.svg" />
+            <Logo src="/logo_lacrei_desktop.7ae004ab.svg" alt="Logo-Lacrei-Saude"/>
             <Button onClick={handleAboutUsClick}> Sobre Nos!</Button>
         </HeaderContainer>
     );
