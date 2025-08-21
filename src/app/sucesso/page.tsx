@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "../../../componets/Button/Button";
 import { BoxSucesso, Texto } from "styles/SucessoStyles";
@@ -9,7 +9,7 @@ import { BoxSucesso, Texto } from "styles/SucessoStyles";
 
 
 export default function SucessoScreen() {
-
+    'use client';
     const router = useRouter();
     const searchParams: any = useSearchParams();
     const nome = searchParams.get("nome")
