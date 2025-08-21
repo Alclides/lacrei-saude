@@ -4,35 +4,30 @@ import { Button } from "../../../componets/Button/Button";
 import { BoxSucesso, Texto } from "styles/SucessoStyles";
 import { Suspense } from "react";
 
-
-
-
-
-
-export default function SucessoScreen() {
+function SucessoContent() {
     const router = useRouter();
     const searchParams: any = useSearchParams();
-    const nome = searchParams.get("nome")
-
-    
-
+    const nome = searchParams.get("nome");
 
     const handleBackClick = () => {
-
-        router.push('/')
-
+        router.push('/');
     }
 
     return (
-
-        <Suspense fallback={<div>Carregando...</div>}>
-        
         <BoxSucesso>
             <Texto>Parabéns {nome}!</Texto>
-            <Texto> Seu candastro como voluntario foi feito com sucesso!</Texto>
-            <Button aria-label="Voltar para formúlario!" onClick={handleBackClick}>Voltar Para Formulario!</Button>
+            <Texto>Seu cadastro como voluntário foi feito com sucesso!</Texto>
+            <Button aria-label="Voltar para formulário!" onClick={handleBackClick}>
+                Voltar Para Formulário!
+            </Button>
         </BoxSucesso>
-        </Suspense>
-        
-    )
+    );
 }
+
+export default function SucessoScreen() {
+    return (
+        <Suspense fallback={<div>Carregando...</div>}>
+            <SucessoContent />
+        </Suspense>
+    );
+} 
