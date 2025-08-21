@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import {Button} from "../Button/Button";
+import { VoluntarioProps } from "../../../../types/voluntario.types";
 
 const Container = styled.div`
     display: flex;
@@ -88,20 +89,34 @@ const Linha = styled.div`
     height: 3px;
 `;
 
-export default function Voluntario() {
+const Sucesso = styled.p`
+    color: rgba(0, 119, 86, 1);
+    font-family: sans-serif;
+`;
+
+export default function Voluntario({onSubmit}: VoluntarioProps) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [vaga, setVaga] = useState('')
+    const [mensagem, setMensagem] = useState("")
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        if(onSubmit) {
+            onSubmit({name, email, vaga})
+        }
+        setMensagem(`Parabéns ${name}, você foi cadastrade!`)
+
+        
         alert(`Parabens ${name}, você foi cadastrade!`)
     }
 
     return (
         <Container>
             <TituloBox>
+                
                 <Titulo>Seja um Voluntariado!</Titulo>
                 <Linha></Linha>
             </TituloBox>
@@ -109,7 +124,7 @@ export default function Voluntario() {
                 <Imagem src={'/menina-feliz-estudante.png'} alt="Menina feliz estudante" />
                 <TextBanner>Venha fazer parte do progama de Voluntários e faça a diferença usando tecnologia! </TextBanner>
             </Banner>
-            
+            <Sucesso>{mensagem}</Sucesso>
             <Formulario onSubmit={handleSubmit}>
                 <Input
                     type="text"
