@@ -1,6 +1,6 @@
 'use client';
 import {Button} from "../Button/Button";
-import { HeaderContainer, Logolacrei } from "./HeaderStyles";
+import { HeaderContainer } from "./HeaderStyles";
 import Image from 'next/image';
 
 
