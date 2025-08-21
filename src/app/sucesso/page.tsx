@@ -9,7 +9,6 @@ import { BoxSucesso, Texto } from "styles/SucessoStyles";
 
 
 export default function SucessoScreen() {
-    'use client';
     const router = useRouter();
     const searchParams: any = useSearchParams();
     const nome = searchParams.get("nome")
