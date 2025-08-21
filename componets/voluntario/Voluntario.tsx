@@ -2,7 +2,7 @@
 import { Banner, Container, Formulario, Imagem, Input, Linha, Sucesso, TextBanner, Titulo, TituloBox, } from './VoluntarioStyles'
 import { useState } from "react";
 import { Button } from "../Button/Button";
-import { VoluntarioProps } from "../../../../types/voluntario.types";
+import { VoluntarioProps } from "../../types/voluntario.types";
 
 
 
@@ -33,7 +33,7 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
                 <Linha></Linha>
             </TituloBox>
             <Banner>
-                <Imagem src={'/menina-feliz-estudante.png'} alt="Menina feliz estudante" />
+                <Imagem src={'/mulher_banner.png'} alt="Menina feliz estudante" />
                 <TextBanner>Venha fazer parte do progama de Voluntários e faça a diferença usando tecnologia! </TextBanner>
             </Banner>
             <Sucesso>{mensagem}</Sucesso>
