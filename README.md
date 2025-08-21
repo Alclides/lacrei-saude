@@ -65,7 +65,7 @@ npm run start
 yarn start
 ```
 
-Para deploy em plataformas como Vercel ou Netlify:
+## Para deploy em plataformas como Vercel ou Netlify:
 
 Conecte o repositório na plataforma de deploy.
 
@@ -74,7 +74,7 @@ Configure variáveis de ambiente.
 Aponte a branch principal (main ou master) para deploy automático.
 
 
-Registro de Testes Aplicados
+## Registro de Testes Aplicados
 
 Testes unitários: Jest e React Testing Library
 
@@ -96,7 +96,7 @@ npm run jest
 
 ```
 
-Proposta de Rollback Simples
+## Proposta de Rollback Simples
 
 Caso haja algum problema em produção, é possível restaurar uma versão anterior rapidamente:
 
@@ -106,7 +106,7 @@ git revert <hash-do-commit>
 git push origin main
 
 
-Re-deploy na plataforma utilizada (Vercel, Netlify, Heroku, etc.)
+## Re-deploy na plataforma utilizada (Vercel, Netlify, Heroku, etc.)
 
 Proposta de Rollback Funcional
 
@@ -123,7 +123,7 @@ Clicar em “Redeploy” para restaurar essa versão.
 Permite validar a versão antes de afetar os usuários finais.
 
 
-Comentários sobre escolhas visuais e técnicas
+## Comentários sobre escolhas visuais e técnicas
 
 Visual:
 
@@ -142,6 +142,6 @@ Uso de Styled-components para estilização isolada.
 Testes automatizados para garantir estabilidade.
 
 
-Justificativas Visuais e Técnicas
+## Justificativas Visuais e Técnicas
 
 Escolhas técnicas: React foi escolhido por sua escalabilidade, comunidade ativa e facilidade de integração com APIs e serviços externos.
