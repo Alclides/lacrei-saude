@@ -1,10 +1,14 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import Voluntario from "./Voluntario";
 import userEvent from "@testing-library/user-event"
+import * as nextNavigation from 'next/navigation'
 
+
+jest.mock('next/navigation', () => ({
+    useRouter: jest.fn(),
+}));
 
 beforeAll(() => {
-    window.alert = jest.fn();
     global.fetch = jest.fn((url, options) =>
         Promise.resolve({
             ok: true,
@@ -15,38 +19,29 @@ beforeAll(() => {
 
 
 afterAll(() => {
-  jest.resetAllMocks()
+    jest.resetAllMocks()
 })
 
-test("deve enviar o formulario chamando a função HandSubmit", async () => {
+test("redireciona para outra rota ao enviar o formulário", async () => {
+    const pushMock = jest.fn();
+    (nextNavigation.useRouter as jest.Mock).mockReturnValue({ push: pushMock });
 
-    const handleSubimt = jest.fn();
-    render(<Voluntario onSubmit={handleSubimt} />);
+    render(<Voluntario />);
 
-
-    const nome = screen.getByPlaceholderText("Digite seu Nome!")
-    const email = screen.getByPlaceholderText("Digite seu Email")
-    const vaga = screen.getByPlaceholderText("Vaga desejada: ex: FrontEnd")
+    const nome = screen.getByPlaceholderText("Digite seu Nome!");
+    const email = screen.getByPlaceholderText("Digite seu Email");
+    const vaga = screen.getByPlaceholderText("Vaga desejada: ex: FrontEnd");
+    const botao = screen.getByRole("button", { name: /enviar/i });
 
     await userEvent.type(nome, "Alclides");
-    await userEvent.type(email, "Alclides@gmail.com")
-    await userEvent.type(vaga, "Backend")
+    await userEvent.type(email, "Alclides@gmail.com");
+    await userEvent.type(vaga, "Backend");
 
+    await userEvent.click(botao);
 
-    const botao = screen.getByRole("button", { name: /enviar/i })
-    await userEvent.click(botao)
-
-    expect(handleSubimt).toHaveBeenCalledWith({
-        name: "Alclides",
-        email: "Alclides@gmail.com",
-        vaga: "Backend"
-    })
-
-     await waitFor(() =>
-    expect(
-      screen.getByText(/parabéns alclides, você foi cadastrade!/i)
-    ).toBeInTheDocument()
-  )
-    expect(window.alert).toHaveBeenCalledWith("Parabens Alclides, você foi cadastrade!")
-
-})
+    await waitFor(() => {
+        expect(pushMock).toHaveBeenCalledWith(
+            expect.stringContaining("/sucesso")
+        );
+    });
+});

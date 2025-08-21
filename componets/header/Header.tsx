@@ -12,8 +12,8 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Logolacrei src="/logo_lacrei_desktop.7ae004ab.svg" alt="Logo-Lacrei-Saude"/>
-            <Button onClick={handleAboutUsClick}> Sobre Nos!</Button>
+            <Logolacrei aria-label="Logo da Lacrei Saude"  src="/logo_lacrei_desktop.7ae004ab.svg" alt="Logo-Lacrei-Saude"/>
+            <Button aria-label="Ir para site da empresa!"  onClick={handleAboutUsClick}> Sobre Nos!</Button>
         </HeaderContainer>
     );
 }

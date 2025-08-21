@@ -3,6 +3,8 @@ import { Banner, Container, Formulario, Imagem, Input, Linha, Sucesso, TextBanne
 import { useState } from "react";
 import { Button } from "../Button/Button";
 import { VoluntarioProps } from "../../types/voluntario.types";
+import { useRouter } from 'next/navigation';
+
 
 
 
@@ -12,17 +14,20 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
     const [email, setEmail] = useState('')
     const [vaga, setVaga] = useState('')
     const [mensagem, setMensagem] = useState("")
+    const router = useRouter();
 
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if (onSubmit) {
             onSubmit({ name, email, vaga })
+            
+
         }
-        setMensagem(`Parabéns ${name}, você foi cadastrade!`)
+        router.push(`/sucesso?nome=${encodeURIComponent(name)}`)
+        
 
 
-        alert(`Parabens ${name}, você foi cadastrade!`)
     }
 
     return (
@@ -45,7 +50,7 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
                     value={name}
                     required
                 />
-                <Input
+                <Input    
                     type="email"
                     placeholder="Digite seu Email"
                     onChange={(e) => setEmail(e.target.value)}
@@ -53,6 +58,7 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
                     required
                 />
                 <Input
+                    aria-label='Digite a vaga Desejada'
                     type="text"
                     placeholder="Vaga desejada: ex: FrontEnd"
                     onChange={(e) => setVaga(e.target.value)}
