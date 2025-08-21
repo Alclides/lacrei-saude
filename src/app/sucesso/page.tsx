@@ -2,6 +2,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "../../../componets/Button/Button";
 import { BoxSucesso, Texto } from "styles/SucessoStyles";
+import { Suspense } from "react";
 
 
 
@@ -24,13 +25,14 @@ export default function SucessoScreen() {
 
     return (
 
-
+        <Suspense fallback={<div>Carregando...</div>}>
         
         <BoxSucesso>
             <Texto>Parabéns {nome}!</Texto>
             <Texto> Seu candastro como voluntario foi feito com sucesso!</Texto>
             <Button aria-label="Voltar para formúlario!" onClick={handleBackClick}>Voltar Para Formulario!</Button>
         </BoxSucesso>
+        </Suspense>
         
     )
 }
