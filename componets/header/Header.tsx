@@ -1,6 +1,7 @@
 'use client';
 import {Button} from "../Button/Button";
 import { HeaderContainer, Logolacrei } from "./HeaderStyles";
+import Image from 'next/image';
 
 
 
@@ -12,7 +13,7 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Logolacrei aria-label="Logo da Lacrei Saude"  src="/logo_lacrei_desktop.7ae004ab.svg" alt="Logo-Lacrei-Saude"/>
+            <Image aria-label="Logo da Lacrei Saude"  src="/logo_lacrei_desktop.7ae004ab.svg" alt="Logo-Lacrei-Saude" width={200} height={50}/>
             <Button aria-label="Ir para site da empresa!"  onClick={handleAboutUsClick}> Sobre Nos!</Button>
         </HeaderContainer>
     );

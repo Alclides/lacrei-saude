@@ -15,12 +15,3 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Logolacrei = styled.img`
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-
-  @media (max-width: 745px) {
-    max-width: 142px;
-  }
-`;

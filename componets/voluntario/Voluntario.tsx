@@ -1,9 +1,10 @@
 'use client'
-import { Banner, Container, Formulario, Imagem, Input, Linha, Sucesso, TextBanner, Titulo, TituloBox, } from './VoluntarioStyles'
+import { Banner, Container, Formulario, ImagemBox, Input, Linha, Sucesso, TextBanner, Titulo, TituloBox, } from './VoluntarioStyles'
 import { useState } from "react";
 import { Button } from "../Button/Button";
 import { VoluntarioProps } from "../../types/voluntario.types";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 
 
@@ -24,7 +25,7 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
             
 
         }
-        router.push(`/sucesso?nome=${encodeURIComponent(name)}`)
+        router.push(`/sucesso?nome=${encodeURIComponent(name)}&vaga=${encodeURIComponent(vaga)}`)
         
 
 
@@ -38,7 +39,15 @@ export default function Voluntario({ onSubmit }: VoluntarioProps) {
                 <Linha></Linha>
             </TituloBox>
             <Banner>
-                <Imagem src={'/mulher_banner.png'} alt="Menina feliz estudante" />
+                <ImagemBox >
+                    <Image 
+                        src="/mulher_banner.png"
+                        alt="Logo"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                    />
+                </ImagemBox>
+                
                 <TextBanner>Venha fazer parte do progama de Voluntários e faça a diferença usando tecnologia! </TextBanner>
             </Banner>
             <Sucesso>{mensagem}</Sucesso>

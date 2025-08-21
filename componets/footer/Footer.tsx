@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import { FooterContainer } from "./FooterStyled";
 
 
@@ -9,7 +10,7 @@ export default function Footer() {
             <div className="linha-footer" />
             <div className="sobre-box">
                 <div className="coluna">
-                    <img className="logo-footer" src={'/Avatar_Redes_Sociais.webp'} alt="Logo Lacrei" />
+                    <Image className="logo-footer" src={'/Avatar_Redes_Sociais.webp'} alt="Logo Lacrei" width={100} height={100} />
                 </div>
                 <div className="coluna">
                     <p>Quem Somos Nós</p>

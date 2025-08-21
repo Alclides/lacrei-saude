@@ -53,12 +53,14 @@ export const TextBanner = styled.p`
     }
 `;
 
-export const Imagem = styled.img`
+export const ImagemBox = styled.div`
     height: 400px;
-    width: auto;
+    width: 400px;
+    position: relative;
 
     @media (max-width: 400px) {
         height: 250px;
+        width: 250px;
         max-width: 100%;
     }
 

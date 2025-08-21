@@ -8,6 +8,7 @@ function SucessoContent() {
     const router = useRouter();
     const searchParams: any = useSearchParams();
     const nome = searchParams.get("nome");
+    const vaga = searchParams.get("vaga")
 
     const handleBackClick = () => {
         router.push('/');
@@ -16,7 +17,7 @@ function SucessoContent() {
     return (
         <BoxSucesso>
             <Texto>Parabéns {nome}!</Texto>
-            <Texto>Seu cadastro como voluntário foi feito com sucesso!</Texto>
+            <Texto>Seu cadastro como voluntário em {vaga} foi feito com sucesso!</Texto>
             <Button aria-label="Voltar para formulário!" onClick={handleBackClick}>
                 Voltar Para Formulário!
             </Button>
